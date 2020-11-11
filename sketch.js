@@ -50,7 +50,12 @@ function draw() {
   monkey.collide(ground);
   
   spawnFood();
-  spawnObstacles()
+  spawnObstacles();
+  
+  if(foodGroup.isTouching(monkey)){
+        foodGroup.destroyEach();
+  
+  } 
   
   if(obstaclesGroup.isTouching(monkey)){
         ground.velocityX = 0;
